@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular JS Project</title>
+    <style>
+      body {
+        background-color: orangered;
+        text-align: center;
+        font-family: sans-serif;
+        color: #ffff;
+        cursor: pointer;
+        /* align-items: center; */
+      }
+    </style>
+  </head>
+  <body>
+    <script src="./angular-1.8.2/angular.js"></script>
+    <div ng-app="">
+      <input type="number" ng-model="qty" placeholder="input quantity" />
+      <p>cost per unit = $200</p>
+      <p ng-model="price">price = {{qty * 200 | currency}}</p>
+      <p ng-model="tax">Tax(10%) ={{ 0.1 * ( qty * 200) | currency }}</p>
+      <p ng-model="total">
+        total ={{ (0.1 * qty * 200) + (qty * 200) | currency }}
+      </p>
+    </div>
+  </body>
+</html>
